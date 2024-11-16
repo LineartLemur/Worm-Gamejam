@@ -7,16 +7,6 @@ public class S_ScarTrigger : MonoBehaviour
 {
 
     public UnityEvent enterEvent;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {

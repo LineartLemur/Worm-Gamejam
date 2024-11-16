@@ -5,6 +5,8 @@ using UnityEngine.Splines;
 public class S_WormMovement : MonoBehaviour
 {
     public SplineAnimate splineAnimate;
+
+    public AudioSource wormSound;
     private void Start()
     {
         StartMovement();
@@ -19,15 +21,18 @@ public class S_WormMovement : MonoBehaviour
         {
             StartMovement();
         }
+       
     }
 
     public void PauseMovement()
     {
         splineAnimate.Pause();
+        wormSound.Stop();
     }
     public void StartMovement()
     {
         splineAnimate.Play();
+        wormSound.Play();
     }
 }
 
