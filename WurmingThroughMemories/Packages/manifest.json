@@ -3,6 +3,7 @@
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.2.5",
     "com.neuecc.unirx": "https://github.com/neuecc/UniRx.git?path=Assets/Plugins/UniRx/Scripts",
     "com.ogxd.project-curator": "https://github.com/ogxd/project-curator.git",
+    "com.unity.2d.sprite": "1.0.0",
     "com.unity.cinemachine": "2.9.7",
     "com.unity.collab-proxy": "2.5.2",
     "com.unity.feature.development": "1.0.1",
