@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,6 +17,7 @@ public class S_CameraTrigger : MonoBehaviour
         if (other.tag == "worm") {
 
             cam.startLerpCamera(WormCameraOffset, WormCameraRotation);
+
         }
     }
 

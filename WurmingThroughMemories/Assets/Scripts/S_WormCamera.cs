@@ -8,7 +8,7 @@ public class S_WormCamera : MonoBehaviour
 {
     public GameObject worm;
 
- 
+
 
     public float lerpTimer = 0;
     public float lerpMaxTime = 1.0f;
@@ -33,34 +33,75 @@ public class S_WormCamera : MonoBehaviour
     void Update()
     {
         transform.position = worm.GetComponent<Transform>().position + camerapos;
-        if(isLerping )
+        if (isLerping)
         {
             LerpCameraStates();
             lerpTimer += Time.deltaTime;
         }
-        if(lerpTimer > lerpMaxTime )
+        if (lerpTimer > lerpMaxTime)
         {
             isLerping = false;
             lerpTimer = 0;
         }
     }
 
-   
+
     public void startLerpCamera(Vector3 newcamerapos, Vector3 newcamerarot)
     {
-      
-        lerpstartrot =transform.eulerAngles;
-        lerpendrot = newcamerarot ;
+
+        lerpstartrot = transform.eulerAngles;
+
+        lerpendrot = NormalizeRotationAngles( newcamerarot);
+
+        lerpstartpos = camerapos;
+        lerpendpos = newcamerapos;
         isLerping = true;
     }
     private void LerpCameraStates()
     {
-        Vector3 currentAngle = new Vector3(
-            Mathf.LerpAngle(lerpstartrot.x, lerpendrot.x, Time.deltaTime/lerpMaxTime),
-            Mathf.LerpAngle(lerpstartrot.y, lerpendrot.y, Time.deltaTime / lerpMaxTime),
-            Mathf.LerpAngle(lerpstartrot.z, lerpendrot.z, Time.deltaTime / lerpMaxTime));
-    
-        this.transform.eulerAngles = lerpendrot;
+        Vector3 currentAngle = Lerp3(lerpstartrot, lerpendrot, lerpTimer / lerpMaxTime);
+        Vector3 currentPos = Lerp3(lerpstartpos, lerpendpos, lerpTimer / lerpMaxTime);
 
+        // this.transform.eulerAngles = currentAngle;
+        transform.eulerAngles = new Vector3(currentAngle.x, currentAngle.y, currentAngle.z);
+        Debug.Log(currentAngle);
+
+
+        camerapos = currentPos;
+
+    }
+    float Lerp1(float firstFloat, float secondFloat, float by)
+    {
+        return firstFloat * (1 - by) + secondFloat * by;
+    }
+    Vector3 Lerp3(Vector3 firstVector, Vector3 secondVector, float by)
+    {
+        float retX = Lerp1(firstVector.x, secondVector.x, by);
+        float retY = Lerp1(firstVector.y, secondVector.y, by);
+        float retZ = Lerp1(firstVector.z, secondVector.z, by);
+        return new Vector3(retX, retY, retZ);
+    }
+
+    float NormalizeAngle(float angle)
+    {
+        if(angle < 0)
+        {
+            angle = Mathf.Abs(angle);
+            angle = 360 - angle;
+        }
+        float normalizedAngle = angle % 360;
+        if (normalizedAngle < 0)
+        {
+            normalizedAngle += 360;
+        }
+        return normalizedAngle;
+    }
+
+    Vector3 NormalizeRotationAngles(Vector3 rotation)
+    {
+        float rotX = NormalizeAngle(rotation.x);
+        float rotY = NormalizeAngle(rotation.y);
+        float rotZ = NormalizeAngle(rotation.z);
+        return new Vector3(rotX, rotY, rotZ);
     }
 }
