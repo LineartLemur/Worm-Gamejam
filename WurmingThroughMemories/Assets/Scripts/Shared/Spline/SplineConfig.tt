@@ -1,0 +1,21 @@
+﻿<#@ template language="C#" #>
+
+<#+
+    public class SplineConfig {
+        public string Name;
+        public float[] matrix;
+        public int[] pregeneratedPointIntervals;
+
+        public static SplineConfig MakeCardinalSpline(string name, int[] pregeneratedPointIntervals, float scale) {
+            return new SplineConfig() {
+                Name = name,
+                pregeneratedPointIntervals = pregeneratedPointIntervals,
+                matrix =
+                    new[] {
+                        0, 1, 0, 0, -scale, 0, scale, 0, 2 * scale, scale - 3, 3 - 2 * scale, -scale, -scale, 2 - scale,
+                        scale - 2, scale
+                    }
+            };
+        }
+    }
+    #>

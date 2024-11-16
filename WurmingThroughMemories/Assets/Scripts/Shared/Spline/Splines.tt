@@ -1,0 +1,139 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ output extension=".cs" #>
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Curiosmos.Shared.CollectionCaching;
+using UnityEngine;
+namespace PepijnWillekens.Splines {
+<#@ include file="SplineConfig.tt"#><#@ import namespace="System.Collections.Generic" #>
+<#
+    
+    List<SplineConfig> configs = new (){
+        SplineConfig.MakeCardinalSpline("CatmullRomSpline", new []{6},0.5f),
+        SplineConfig.MakeCardinalSpline("CardinalSpline8", new []{6},0.8f),
+    new SplineConfig(){
+        Name = "Bspline",
+        matrix = new []{1/6f,4/6f,1/6f,0,-0.5f,0,0.5f,0,0.5f,-1,0.5f,0,-1/6f,0.5f,-0.5f,1/6f},
+        pregeneratedPointIntervals = new []{4,6}
+    }
+    };
+
+        
+        foreach (var config in configs){
+#>
+
+#region <#=config.Name#>
+    public static class <#=config.Name#> {
+
+        private static readonly Matrix4x4 MyMatrix = new Matrix4x4(
+            new Vector4(<#=config.matrix[0]#>f, <#=config.matrix[4]#>f, <#=config.matrix[8]#>f, <#=config.matrix[12]#>f ),
+            new Vector4(<#=config.matrix[1]#>f, <#=config.matrix[5]#>f, <#=config.matrix[9]#>f, <#=config.matrix[13]#>f ),
+            new Vector4(<#=config.matrix[2]#>f, <#=config.matrix[6]#>f, <#=config.matrix[10]#>f, <#=config.matrix[14]#>f ),
+            new Vector4(<#=config.matrix[3]#>f, <#=config.matrix[7]#>f, <#=config.matrix[11]#>f, <#=config.matrix[15]#>f ));
+<#
+            foreach (var interval in config.pregeneratedPointIntervals) {
+                float tPerInterval = 1f / interval;
+                for (int i = 1; i <= interval; i++) {
+                    var t = tPerInterval * i;
+#>
+        private static readonly Vector4 t<#= interval #>_<#= i #> = new(1, <#= t #>f, <#= t * t #>f, <#= t * t * t #>f);
+<#
+                }
+            }
+#>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static float DoTransform(Vector4 component, Vector4 powers) {
+            var v = Vector4.Scale(MyMatrix * component, powers);
+            return v.x + v.y + v.z + v.w;
+        }
+<#
+    for (int vectorDim = 2; vectorDim <= 4; vectorDim++) {
+
+        var coord = new string[] {"x", "y", "z", "w"}.Take(vectorDim).ToArray();
+#>
+
+        public static void TransformPoints(LinkedList<Vector<#=vectorDim#>> controlpoints, LinkedList<Vector<#=vectorDim#>> result) {
+            using var pointsB = CollectionPool<LinkedList<Vector<#=vectorDim#>>, Vector<#=vectorDim#>>.Get();
+
+            pointsB.c.AddFirst(controlpoints.First.Value);
+            for (var el = controlpoints.First.Next; el is {Next: { }}; el = el.Next) {
+                pointsB.c.AddLast((el.Previous.Value + el.Value * 2 + el.Next.Value) / 4);
+            }
+
+            pointsB.c.AddLast(controlpoints.Last.Value);
+            result.AddFirst(controlpoints.First.Value);
+
+            for (var el = pointsB.c.First; el is {Next: { }}; el = el.Next) {
+                var p1 = el.Previous?.Value ?? el.Value;
+                var p2 = el.Value;
+                var p3 = el.Next.Value;
+                var p4 = el.Next.Next?.Value ?? el.Next.Value;
+                foreach (var p in Get<#=config.pregeneratedPointIntervals.First()#>Points(p1, p2, p3, p4)) {
+                    result.AddLast(p);
+                }
+            }
+
+            result.AddLast(controlpoints.Last.Value);
+        }
+
+        public static IEnumerable<Vector<#=vectorDim#>> GetNPoints(int n, Vector<#=vectorDim#> p1, Vector<#=vectorDim#> p2, Vector<#=vectorDim#> p3, Vector<#=vectorDim#> p4) {
+<#foreach (var c in coord) {#>
+            Vector4 points<#= c.ToUpper() #> = new Vector4(p1.<#= c #>, p2.<#= c #>, p3.<#= c #>, p4.<#= c #>);
+<#}#>
+
+            for (int i = 1; i <= n; i++) {
+                float t = (float) i / n;
+                var powers = new Vector4(1, 0);
+                powers.y = powers.x * t;
+                powers.z = powers.y * t;
+                powers.w = powers.z * t;
+
+                yield return new Vector<#= vectorDim #>(<#for (int i = 0; i < vectorDim; i++) {var c = coord[i];#>DoTransform(points<#= c.ToUpper() #>, powers)<#if (i < vectorDim - 1) {#>, <#}#><#}#>);
+            }
+        }
+
+
+        
+        public static Vector<#=vectorDim#> GetPoint(float t, Vector<#= vectorDim #> p1, Vector<#= vectorDim #> p2, Vector<#= vectorDim #> p3, Vector<#= vectorDim #> p4) {
+<#foreach (var c in coord) {#>
+            Vector4 points<#= c.ToUpper() #> = new Vector4(p1.<#= c #>, p2.<#= c #>, p3.<#= c #>, p4.<#= c #>);
+<#}#>
+            var powers = new Vector4(1, 0);
+            powers.y = powers.x * t;
+            powers.z = powers.y * t;
+            powers.w = powers.z * t;
+
+            return new Vector<#= vectorDim #>(<#for (int i = 0; i < vectorDim; i++) {var c = coord[i];#>DoTransform(points<#= c.ToUpper() #>, powers)<#if (i < vectorDim - 1) {#>, <#}#><#}#>);
+        }
+<#
+        foreach (var interval in config.pregeneratedPointIntervals) {
+#>
+        
+        public static IEnumerable<Vector<#=vectorDim#>> Get<#=interval#>Points(Vector<#=vectorDim#> p1, Vector<#=vectorDim#> p2, Vector<#=vectorDim#> p3, Vector<#=vectorDim#> p4) {
+<#
+        foreach (var c in coord) {
+#>
+            Vector4 points<#= c.ToUpper() #> = new Vector4(p1.<#= c #>, p2.<#= c #>, p3.<#= c #>, p4.<#= c #>);
+<#
+        }
+        
+            for (int i = 1; i <= interval; i++) {
+#>
+            yield return new Vector<#= vectorDim #>(<#for (int d = 0; d < vectorDim; d++) {var c = coord[d];#>DoTransform(points<#= c.ToUpper() #>, t<#=interval#>_<#=i#>)<#if (d < vectorDim - 1) {#>, <#}#><#}#>);
+<# 
+            }
+#>        }
+<# 
+        }
+#>
+<#
+    }
+#>
+
+    }
+#endregion
+<#
+}
+#>
+}

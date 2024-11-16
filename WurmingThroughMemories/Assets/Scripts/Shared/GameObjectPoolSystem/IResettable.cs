@@ -1,0 +1,4 @@
+﻿interface IResettable
+{
+    void Reset();
+}
