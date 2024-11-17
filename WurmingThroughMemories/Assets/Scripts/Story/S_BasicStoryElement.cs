@@ -1,10 +1,12 @@
 ﻿using Cysharp.Threading.Tasks;
 using PepijnWillekens.ManagerSystem;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace DefaultNamespace {
     
     public  class S_BasicStoryElement : S_StoryElement {
+        [SuffixLabel("s", overlay:true)]
         public float duration=3;
         public Vector2 startPos;
         public Vector2 endPos;
