@@ -10,13 +10,13 @@ public class S_CameraTrigger : MonoBehaviour
     public S_WormCamera cam;
     public Vector3 WormCameraOffset;
     public Vector3 WormCameraRotation;
-
+    public float lerptime = 1;
     private void OnTriggerEnter(Collider other)
     {
    
         if (other.tag == "worm") {
 
-            cam.startLerpCamera(WormCameraOffset, WormCameraRotation);
+            cam.startLerpCamera(WormCameraOffset, WormCameraRotation, lerptime);
 
         }
     }
