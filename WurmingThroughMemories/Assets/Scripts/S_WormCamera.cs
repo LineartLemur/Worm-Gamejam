@@ -42,16 +42,19 @@ public class S_WormCamera : MonoBehaviour
         {
             isLerping = false;
             lerpTimer = 0;
+            transform.eulerAngles=NormalizeRotationAngles(transform.eulerAngles);
         }
     }
 
 
-    public void startLerpCamera(Vector3 newcamerapos, Vector3 newcamerarot)
+    public void startLerpCamera(Vector3 newcamerapos, Vector3 newcamerarot, float lerptime)
     {
+        Debug.Log("SWDQ" + newcamerarot + transform.eulerAngles);
+        lerpMaxTime = lerptime;
 
         lerpstartrot = transform.eulerAngles;
 
-        lerpendrot = NormalizeRotationAngles( newcamerarot);
+        lerpendrot = newcamerarot;
 
         lerpstartpos = camerapos;
         lerpendpos = newcamerapos;
@@ -64,6 +67,7 @@ public class S_WormCamera : MonoBehaviour
 
         // this.transform.eulerAngles = currentAngle;
         transform.eulerAngles = new Vector3(currentAngle.x, currentAngle.y, currentAngle.z);
+        Debug.Log(lerpTimer / lerpMaxTime);
         Debug.Log(currentAngle);
 
 
@@ -102,6 +106,7 @@ public class S_WormCamera : MonoBehaviour
         float rotX = NormalizeAngle(rotation.x);
         float rotY = NormalizeAngle(rotation.y);
         float rotZ = NormalizeAngle(rotation.z);
-        return new Vector3(rotX, rotY, rotZ);
+        //return new Vector3(rotX, rotY, rotZ);
+        return rotation;
     }
 }
