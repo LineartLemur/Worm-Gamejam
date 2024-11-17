@@ -27,7 +27,8 @@ public class S_NarrationEndGame : MonoBehaviour
         EndPos = objecttransform.localPosition;
         objecttransform.localPosition = BeginPos;
 
-        WholeText = introtext + "\n" + CatScratchTexts[consistencyManager.CatScratchMode] + "\n" + KneeScratchTexts[consistencyManager.KneeScratchMode] + "\n" + ChinScratchTexts[consistencyManager.ChinScratchMode] + "\n" + EyeScratchTexts[consistencyManager.EyeScratchMode] + "\n" + endtext;
+        // WholeText = introtext + "\n" + CatScratchTexts[consistencyManager.CatScratchMode] + "\n" + KneeScratchTexts[consistencyManager.KneeScratchMode] + "\n" + ChinScratchTexts[consistencyManager.ChinScratchMode] + "\n" + EyeScratchTexts[consistencyManager.EyeScratchMode] + "\n" + endtext;
+        WholeText = introtext;
         text_block.text = WholeText;
     }
 
