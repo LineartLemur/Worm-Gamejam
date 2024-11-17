@@ -6,6 +6,7 @@ using PepijnWillekens.ManagerSystem;
 using Sirenix.OdinInspector;
 using UniRx;
 using UnityEngine;
+using UnityEngine.Splines;
 
 namespace DefaultNamespace {
     public class S_RunStory : AutoInit {
@@ -30,6 +31,7 @@ namespace DefaultNamespace {
         }
 
         public async UniTask Run() {
+            FindObjectOfType<SplineAnimate>().Pause();
             int i = 0;
             int r = 0;
             while (r>-2 && i < sequence.Count) {
@@ -41,7 +43,8 @@ namespace DefaultNamespace {
                 }
             }
 
-            showIndex.Value = -1;
+            FindObjectOfType<SplineAnimate>().Play();
+            Destroy(gameObject);
         }
 [Button]
         public void OnValidate() {
