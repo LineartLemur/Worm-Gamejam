@@ -565,12 +565,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text_block: {fileID: 1079713368}
   consistencyManager: {fileID: 532330113}
-  introtext: Here we are my friend.
+  introtext: What a life story that was eh. <BR> I wonder how you finally died though..<BR>
+    Oh well, lets see how your life played out, every scar has a meaning I guess...
+    yappayappayappa <BR>
   CatScratchTexts:
-  - UWU
-  endtext: Bye
+  - <BR>You kept getting scratched over and over again by your cats. But that doesn't
+    matter. You love cats! Your leg had to get amputated when you turned 32 though,
+    sometimes you might have to say stop...
+  endtext: Well, I hope you're happy with how things ended up!<BR><BR> byeeeeee<BR><BR>
   objecttransform: {fileID: 302731333}
-  BeginPos: {x: 0, y: -300, z: 0}
+  BeginPos: {x: 0, y: -602.86, z: 0}
   EndPos: {x: 0, y: 0, z: 0}
   time: 5
 --- !u!1001 &306509411
@@ -1481,7 +1485,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 404.56}
+  m_AnchoredPosition: {x: -100, y: 542.6}
   m_SizeDelta: {x: 414.7, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1079713368
