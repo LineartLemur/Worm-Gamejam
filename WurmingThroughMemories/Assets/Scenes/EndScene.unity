@@ -605,11 +605,11 @@ MonoBehaviour:
   consistencyManager: {fileID: 532330113}
   introtext: What a life story that was eh. <BR> I wonder how you finally died though..<BR>
     <BR> Oh well, I hope you enjoyed every moment of it!<BR> <BR> You survived vicious
-    feline attacks! <BR> <BR> You quite*literally* fell for a rat girl <BR> <BR>
-    You swung and swung and swung and swu... <BR> <BR> and you probably should have
-    payed more attention in class... <BR> <BR> But it was all worth it, and even
-    if it wasnt.. then there are no second chances now anymore so... Guess you'll
-    have to be happy with it lol <BR> <BR> Byeeeeee <BR>
+    feline attacks! <BR> <BR> You quite literally fell for a rat girl <BR> <BR> You
+    swung and swung and swung and swu... <BR> <BR> and you probably should have payed
+    more attention in class... <BR> <BR> But it was all worth it, and even if it
+    wasnt.. then there are no second chances now anymore so... Guess you'll have
+    to be happy with it lol <BR> <BR> Byeeeeee <BR>
   CatScratchTexts:
   - <BR>You kept getting scratched over and over again by your cats. But that doesn't
     matter. You love cats! Your leg had to get amputated when you turned 32 though,
@@ -2372,7 +2372,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 282.42, y: 15}
+  m_AnchoredPosition: {x: 282.42, y: 108.8}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1487707312
@@ -2397,24 +2397,31 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Made by:
 
+    Dawn: 2D art + Story
+
+    Writing
+
     Pepijn: Programming
 
-    Dawn: 2D art
+    Warre:
+    3D art +
 
-    Warre: Programming
+    Programming
 
-    and
-    3D art
 
-    Jan: Programming
+    Special thanks to
 
-    Nam: Programming
+    Jan and Nan for extra
+
+    programming
+    help and
+
+    vibes
 
 
     Thank you,
 
-    Mutation
-    Game Jam,
+    Mutation Game Jam,
 
     for organising'
   m_isRightToLeft: 0
