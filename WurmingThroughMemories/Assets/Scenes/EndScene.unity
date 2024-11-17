@@ -633,7 +633,7 @@ MonoBehaviour:
   objecttransform: {fileID: 302731333}
   BeginPos: {x: 0, y: -1500, z: 0}
   EndPos: {x: 0, y: 0, z: 0}
-  time: 18
+  time: 23
 --- !u!1001 &306509411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1430,7 +1430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeginPos: {x: -1.42, y: 9.38, z: 12}
-  time: 18
+  time: 23
 --- !u!1 &820933993
 GameObject:
   m_ObjectHideFlags: 0
