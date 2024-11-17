@@ -664,6 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb398e879960b8347ac50cba4a1b0f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  result: 0
   enterEvent:
     m_PersistentCalls:
       m_Calls:
@@ -679,6 +680,7 @@ MonoBehaviour:
           m_StringArgument: EndScene
           m_BoolArgument: 0
         m_CallState: 2
+  prefab: {fileID: 0}
 --- !u!65 &112434947
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -897,6 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb398e879960b8347ac50cba4a1b0f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  result: 1
   enterEvent:
     m_PersistentCalls:
       m_Calls:
@@ -912,6 +915,7 @@ MonoBehaviour:
           m_StringArgument: EndScene
           m_BoolArgument: 0
         m_CallState: 2
+  prefab: {fileID: 3689398161658327189, guid: 33303ece834b39240afb72a1f51d05c4, type: 3}
 --- !u!65 &147852378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -929,7 +933,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -5226,6 +5230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb398e879960b8347ac50cba4a1b0f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  result: 0
   enterEvent:
     m_PersistentCalls:
       m_Calls:
@@ -5241,6 +5246,7 @@ MonoBehaviour:
           m_StringArgument: EndScene
           m_BoolArgument: 0
         m_CallState: 2
+  prefab: {fileID: 0}
 --- !u!65 &592466181
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5549,6 +5555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb398e879960b8347ac50cba4a1b0f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  result: 0
   enterEvent:
     m_PersistentCalls:
       m_Calls:
@@ -5564,6 +5571,7 @@ MonoBehaviour:
           m_StringArgument: EndScene
           m_BoolArgument: 0
         m_CallState: 2
+  prefab: {fileID: 0}
 --- !u!65 &676178257
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5782,7 +5790,7 @@ GameObject:
   - component: {fileID: 709748091}
   - component: {fileID: 709748090}
   m_Layer: 0
-  m_Name: ScarTrigger_LEG
+  m_Name: ScarTrigger_CAT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5815,6 +5823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb398e879960b8347ac50cba4a1b0f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  result: 1
   enterEvent:
     m_PersistentCalls:
       m_Calls:
@@ -5830,6 +5839,7 @@ MonoBehaviour:
           m_StringArgument: EndScene
           m_BoolArgument: 0
         m_CallState: 2
+  prefab: {fileID: 7211717421727649022, guid: 87fb37d262168c741bc342e379a9785e, type: 3}
 --- !u!65 &709748091
 BoxCollider:
   m_ObjectHideFlags: 0
