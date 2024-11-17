@@ -10,6 +10,8 @@ namespace DefaultNamespace {
         public Vector2 endPos;
         public float startScale=1;
         public float endScale=1;
+        public int nextFrame = -1;
+        
         public override async UniTask<int> Run() {
             float t = 0;
 
@@ -20,7 +22,7 @@ namespace DefaultNamespace {
                 await UniTask.Yield();
             }
 
-            return -1;
+            return nextFrame;
         }
     }
 }

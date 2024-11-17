@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using PepijnWillekens.ManagerSystem;
+using Sirenix.OdinInspector;
 using UniRx;
 using UnityEngine;
 
@@ -30,7 +32,7 @@ namespace DefaultNamespace {
         public async UniTask Run() {
             int i = 0;
             int r = 0;
-            while (r!= -2 && i < sequence.Count) {
+            while (r>-2 && i < sequence.Count) {
                 showIndex.Value = i;
                 r = await sequence[i].Run();
                 if (r < 0) i++;
@@ -38,9 +40,20 @@ namespace DefaultNamespace {
                     i = r;
                 }
             }
-           
 
+            showIndex.Value = -1;
         }
+[Button]
+        public void OnValidate() {
+            if(parent == null) return;
+            
+            for (int i = 0; i < parent.childCount; i++) {
+                var e = parent.GetChild(i).gameObject;
 
+                var realName = e.gameObject.name.Split("]").Last();
+
+                e.name = $"[{i}]{realName}";
+            }
+        }
     }
 }
