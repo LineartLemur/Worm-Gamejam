@@ -10269,13 +10269,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793956248}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04485273, y: -0.62637776, z: 0.77164984, w: 0.10097355}
-  m_LocalPosition: {x: -1.07, y: -1.82, z: -23.17}
-  m_LocalScale: {x: 2.1012304, y: 2.1012304, z: 2.1012304}
+  m_LocalRotation: {x: 0.22344962, y: -0.58559906, z: 0.73994946, w: 0.24416982}
+  m_LocalPosition: {x: -0.4, y: -2.46, z: -24.07}
+  m_LocalScale: {x: 1.4883436, y: 1.4883436, z: 1.4883436}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 147867494}
-  m_LocalEulerAnglesHint: {x: 102.64499, y: -195.16699, z: -27.076996}
+  m_LocalEulerAnglesHint: {x: 102.64499, y: -168.214, z: -27.076996}
 --- !u!114 &1793956250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11009,13 +11009,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109828559}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04485273, y: -0.62637776, z: 0.77164984, w: 0.10097355}
-  m_LocalPosition: {x: -4.1, y: -1.82, z: -23.11}
-  m_LocalScale: {x: 2.1012304, y: 2.1012304, z: 2.1012304}
+  m_LocalRotation: {x: -0.32436702, y: -0.5999651, z: 0.70159847, w: -0.2063677}
+  m_LocalPosition: {x: -4.86, y: -2.57, z: -23.74}
+  m_LocalScale: {x: 1.4856428, y: 1.4856428, z: 1.4856428}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 147867494}
-  m_LocalEulerAnglesHint: {x: 102.64499, y: -195.16699, z: -27.076996}
+  m_LocalEulerAnglesHint: {x: 102.64499, y: -251.446, z: -27.078003}
 --- !u!114 &2109828561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11188,8 +11188,8 @@ Transform:
   m_GameObject: {fileID: 2130849047}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.086627245, y: -3.421, z: -8.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.283, y: -3.421, z: -8.1}
+  m_LocalScale: {x: 1.6187, y: 1.6187, z: 1.6187}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 147867494}
@@ -11206,7 +11206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: e24710271defe5747a924f640592bf7c, type: 2}
+  m_Material: {fileID: 2100000, guid: de6d68affa201dc45a56aebe006b0b04, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 0.9
   m_StartAngleFade: 180
@@ -11214,7 +11214,7 @@ MonoBehaviour:
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
   m_DecalLayerMask: 1
-  m_ScaleMode: 0
+  m_ScaleMode: 1
   m_Offset: {x: 0, y: 0, z: 0.5}
   m_Size: {x: 1, y: 1, z: 1}
   m_FadeFactor: 1
