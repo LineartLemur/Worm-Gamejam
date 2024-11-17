@@ -212,7 +212,7 @@ Transform:
   m_GameObject: {fileID: 25542753}
   serializedVersion: 2
   m_LocalRotation: {x: 0.01562567, y: -0, z: -0, w: 0.999878}
-  m_LocalPosition: {x: 8.404959, y: 9.7, z: -33.89}
+  m_LocalPosition: {x: 8.404959, y: 9.7, z: -34.18}
   m_LocalScale: {x: 19.863, y: 28.639004, z: 0.101400316}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 963194229}
-  WormCameraOffset: {x: 0, y: -8, z: 0}
+  WormCameraOffset: {x: 0, y: -10.17, z: 0}
   WormCameraRotation: {x: 90, y: 0, z: 0}
   lerptime: 1
 --- !u!65 &25542756
@@ -1979,13 +1979,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434285083}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.01562567, y: -0, z: -0, w: 0.999878}
-  m_LocalPosition: {x: 8.404959, y: 8.92, z: -4.39}
-  m_LocalScale: {x: 19.863, y: 28.639004, z: 0.101400316}
+  m_LocalRotation: {x: 0.5150953, y: -0, z: -0, w: 0.8571329}
+  m_LocalPosition: {x: 8.404959, y: -3.19, z: -4.39}
+  m_LocalScale: {x: 19.863, y: 2.3256016, z: 0.101400316}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2145885749}
-  m_LocalEulerAnglesHint: {x: 1.791, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 62.008, y: 0, z: 0}
 --- !u!65 &434285086
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2070,9 +2070,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 963194229}
-  WormCameraOffset: {x: 0, y: 0, z: 4}
+  WormCameraOffset: {x: 0, y: 0.63, z: 3.88}
   WormCameraRotation: {x: 20, y: 170, z: 354}
-  lerptime: 1.4
+  lerptime: 1.2
 --- !u!1001 &437379822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6894,7 +6894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 963194229}
-  WormCameraOffset: {x: 0, y: 6.65, z: -0.57}
+  WormCameraOffset: {x: 0, y: 3.02, z: -0.57}
   WormCameraRotation: {x: 90, y: 170, z: 340}
   lerptime: 1
 --- !u!65 &860870585
@@ -6977,7 +6977,7 @@ Transform:
   m_GameObject: {fileID: 860870583}
   serializedVersion: 2
   m_LocalRotation: {x: 0.01562567, y: -0, z: -0, w: 0.999878}
-  m_LocalPosition: {x: 8.404959, y: 9.7, z: -5.99}
+  m_LocalPosition: {x: 8.404959, y: 10.89, z: -5.99}
   m_LocalScale: {x: 19.863, y: 28.639004, z: 0.101400316}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7091,7 +7091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 963194229}
-  WormCameraOffset: {x: 0, y: 6.65, z: -0.57}
+  WormCameraOffset: {x: 0, y: 3.67, z: -0.57}
   WormCameraRotation: {x: 90, y: 170, z: 340}
   lerptime: 1
 --- !u!65 &919747244
@@ -7454,7 +7454,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 66.82437
+  field of view: 66.1
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -8205,7 +8205,7 @@ Transform:
   m_GameObject: {fileID: 1245129418}
   serializedVersion: 2
   m_LocalRotation: {x: 0.01562567, y: -0, z: -0, w: 0.999878}
-  m_LocalPosition: {x: 8.404959, y: 8.92, z: -29.56}
+  m_LocalPosition: {x: 8.404959, y: 8.92, z: -29.03}
   m_LocalScale: {x: 19.863, y: 28.639004, z: 0.101400316}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8224,7 +8224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 963194229}
-  WormCameraOffset: {x: 0, y: 0, z: 4}
+  WormCameraOffset: {x: 0, y: 0, z: 2.28}
   WormCameraRotation: {x: 20, y: 170, z: 354}
   lerptime: 1.4
 --- !u!65 &1245129421
@@ -11080,7 +11080,7 @@ MonoBehaviour:
   cam: {fileID: 963194229}
   WormCameraOffset: {x: 0, y: 6.65, z: -0.57}
   WormCameraRotation: {x: 90, y: 170, z: 354}
-  lerptime: 1
+  lerptime: 2
 --- !u!65 &2110702937
 BoxCollider:
   m_ObjectHideFlags: 0

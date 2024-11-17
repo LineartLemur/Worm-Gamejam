@@ -9,6 +9,9 @@ public class S_NarrationEndGame : MonoBehaviour
     public S_ConsistencyManager consistencyManager;
     public string introtext;
     public string[] CatScratchTexts;
+    public string[] KneeScratchTexts;
+    public string[] ChinScratchTexts;
+    public string[] EyeScratchTexts;
     public string endtext;
     public RectTransform objecttransform;
     private string WholeText;
@@ -24,7 +27,7 @@ public class S_NarrationEndGame : MonoBehaviour
         EndPos = objecttransform.localPosition;
         objecttransform.localPosition = BeginPos;
 
-        WholeText = introtext + "\n" + CatScratchTexts[consistencyManager.CatScratchMode] + "\n" + endtext;
+        WholeText = introtext + "\n" + CatScratchTexts[consistencyManager.CatScratchMode] + "\n" + KneeScratchTexts[consistencyManager.KneeScratchMode] + "\n" + ChinScratchTexts[consistencyManager.ChinScratchMode] + "\n" + EyeScratchTexts[consistencyManager.EyeScratchMode] + "\n" + endtext;
         text_block.text = WholeText;
     }
 

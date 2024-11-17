@@ -566,12 +566,26 @@ MonoBehaviour:
   text_block: {fileID: 1079713368}
   consistencyManager: {fileID: 532330113}
   introtext: What a life story that was eh. <BR> I wonder how you finally died though..<BR>
-    Oh well, lets see how your life played out, every scar has a meaning I guess...
-    yappayappayappa <BR>
+    Oh well, lets see how your life played out, every scar has a meaning! <BR>
   CatScratchTexts:
   - <BR>You kept getting scratched over and over again by your cats. But that doesn't
     matter. You love cats! Your leg had to get amputated when you turned 32 though,
     sometimes you might have to say stop...
+  - <BR> You pushed away the cat and didnt get scratched again. You never learned
+    how to trust one again and are to this day deadly afraid of all cats, including
+    Garfield...<BR>
+  - <BR> You pushed away the cat but learned how to forgive it too. You became a
+    very empathic person and started up 14 different charities over the course of
+    your lifetime. <BR>
+  KneeScratchTexts:
+  - <BR>  You didnt dare to skateboard again.. but that's okay! You learned how to
+    make video games instead and had tons of fun that way!
+  - <BR> You *literally* fell for the rat girl you we're trying to impress. She liked
+    how tough you looked with your knee scratch though
+  ChinScratchTexts:
+  - 
+  EyeScratchTexts:
+  - 
   endtext: Well, I hope you're happy with how things ended up!<BR><BR> byeeeeee<BR><BR>
   objecttransform: {fileID: 302731333}
   BeginPos: {x: 0, y: -602.86, z: 0}
@@ -1120,6 +1134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CatScratchMode: 0
+  KneeScratchMode: 0
+  ChinScratchMode: 0
+  EyeScratchMode: 0
 --- !u!224 &532330114
 RectTransform:
   m_ObjectHideFlags: 0
